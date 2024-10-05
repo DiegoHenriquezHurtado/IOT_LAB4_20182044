@@ -23,14 +23,14 @@ public class PosicionesFragment extends Fragment {
 
         binding=FragmentPosicionesBinding.inflate(inflater,container,false);
 
-        NavController navController = NavHostFragment.findNavController(PosicionesFragment.this);
+        /*NavController navController = NavHostFragment.findNavController(PosicionesFragment.this);
         binding.btnLigas.setOnClickListener(view -> {
             navController.navigate(R.id.action_posicionesFragment_to_ligasFragment);
         });
 
         binding.btnResultados.setOnClickListener(view -> {
             navController.navigate(R.id.action_posicionesFragment_to_resultadosFragment);
-        });
+        });*/
 
         return binding.getRoot();
     }

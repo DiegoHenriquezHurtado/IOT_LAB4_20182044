@@ -2,4 +2,8 @@
     <string name="app_name">TeleFutbol</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Otros strings ... -->
+    <string name="title_ligas">Ligas</string>
+    <string name="title_posiciones">Posiciones</string>
+    <string name="title_resultados">Resultados</string>
 </resources>

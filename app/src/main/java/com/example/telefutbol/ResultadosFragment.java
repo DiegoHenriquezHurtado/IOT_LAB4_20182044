@@ -22,7 +22,7 @@ public class ResultadosFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         binding = FragmentResultadosBinding.inflate(inflater,container,false);
-        NavController navController = NavHostFragment.findNavController(ResultadosFragment.this);
+        /*NavController navController = NavHostFragment.findNavController(ResultadosFragment.this);
 
         binding.btnLigas.setOnClickListener(view -> {
             navController.navigate(R.id.action_resultadosFragment_to_ligasFragment);
@@ -30,7 +30,7 @@ public class ResultadosFragment extends Fragment {
 
         binding.btnPosiciones.setOnClickListener(view -> {
             navController.navigate(R.id.action_resultadosFragment_to_posicionesFragment);
-        });
+        });*/
 
         return binding.getRoot();
     }

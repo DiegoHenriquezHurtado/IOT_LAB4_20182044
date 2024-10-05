@@ -3,42 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/ligasFragment">
+    app:startDestination="@id/navigation_ligas">
 
     <fragment
-        android:id="@+id/ligasFragment"
+        android:id="@+id/navigation_ligas"
         android:name="com.example.telefutbol.LigasFragment"
         android:label="fragment_ligas"
         tools:layout="@layout/fragment_ligas" >
-        <action
-            android:id="@+id/action_ligasFragment_to_posicionesFragment"
-            app:destination="@id/posicionesFragment" />
-        <action
-            android:id="@+id/action_ligasFragment_to_resultadosFragment"
-            app:destination="@id/resultadosFragment" />
     </fragment>
     <fragment
-        android:id="@+id/posicionesFragment"
+        android:id="@+id/navigation_posiciones"
         android:name="com.example.telefutbol.PosicionesFragment"
         android:label="fragment_posiciones"
         tools:layout="@layout/fragment_posiciones" >
-        <action
-            android:id="@+id/action_posicionesFragment_to_resultadosFragment"
-            app:destination="@id/resultadosFragment" />
-        <action
-            android:id="@+id/action_posicionesFragment_to_ligasFragment"
-            app:destination="@id/ligasFragment" />
     </fragment>
     <fragment
-        android:id="@+id/resultadosFragment"
+        android:id="@+id/navigation_resultados"
         android:name="com.example.telefutbol.ResultadosFragment"
         android:label="fragment_resultados"
         tools:layout="@layout/fragment_resultados" >
-        <action
-            android:id="@+id/action_resultadosFragment_to_ligasFragment"
-            app:destination="@id/ligasFragment" />
-        <action
-            android:id="@+id/action_resultadosFragment_to_posicionesFragment"
-            app:destination="@id/posicionesFragment" />
     </fragment>
 </navigation>
