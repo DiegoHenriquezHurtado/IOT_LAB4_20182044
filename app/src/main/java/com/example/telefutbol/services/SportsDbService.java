@@ -2,6 +2,8 @@ package com.example.telefutbol.services;
 
 import com.example.telefutbol.Entity.Countries;
 import com.example.telefutbol.Entity.Leagues;
+import com.example.telefutbol.Entity.Posiciones;
+import com.example.telefutbol.Entity.Table;
 
 import retrofit2.Call;
 import retrofit2.http.FormUrlEncoded;
@@ -17,4 +19,7 @@ public interface SportsDbService {
 
     @GET("/api/v1/json/3/search_all_leagues.php")
     Call<Countries> getLeaguesPorPais(@Query("c") String country);
+
+    @GET("/api/v1/json/3/lookuptable.php")
+    Call<Posiciones> getPosiciones(@Query("l") String idLiga , @Query("s") String temporada);
 }

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="12dp"
+    android:background="@drawable/border_bottom"
+    android:backgroundTint="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre: "/>
+            <TextView
+                android:id="@+id/nombreLiga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nombre Liga"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ranking: "/>
+            <TextView
+                android:id="@+id/nroRanking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nroRanking"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Victoria/Empate/Derrotas: "/>
+            <TextView
+                android:id="@+id/nroVictDerroEmpate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--/--/--"/>
+        </LinearLayout>
+        
+        <ImageView
+            android:id="@+id/imgBadge"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Goles anotados/Concedidos/Diferencia Goles: "/>
+            <TextView
+                android:id="@+id/nroAnotadosConcedidosDiferencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--/--/--"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>
