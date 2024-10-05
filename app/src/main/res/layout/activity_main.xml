@@ -32,6 +32,7 @@
             app:srcCompat="@drawable/img_futbol_2" />
     </LinearLayout>
     <Button
+        android:id="@+id/btnIngresar"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="INGRESAR"

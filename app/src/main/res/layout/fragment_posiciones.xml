@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/posicionesFragment"
+    tools:context=".PosicionesFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Posiciones de Liga"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/idLiga"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="idLiga"
+                android:layout_marginStart="20dp"/>
+            <EditText
+                android:id="@+id/temporada"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="Temporada"
+                android:layout_marginStart="20dp"/>
+            <Button
+                android:id="@+id/btnBuscar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buscar"
+                android:layout_marginLeft="50dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="550dp">
+            <Button
+                android:id="@+id/btnLigas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="Ligas"/>
+            <Button
+                android:id="@+id/btnPosiciones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Posiciones"
+                android:layout_marginRight="20dp"/>
+            <Button
+                android:id="@+id/btnResultados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resultados"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
