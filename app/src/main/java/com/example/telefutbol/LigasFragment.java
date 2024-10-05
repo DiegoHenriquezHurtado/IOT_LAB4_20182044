@@ -22,8 +22,6 @@ public class LigasFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         binding = FragmentLigasBinding.inflate(inflater,container,false);
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_ligas, container, false);
 
         NavController navController = NavHostFragment.findNavController(LigasFragment.this);
 

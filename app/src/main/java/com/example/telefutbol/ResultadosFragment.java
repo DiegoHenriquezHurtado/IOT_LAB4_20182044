@@ -32,9 +32,6 @@ public class ResultadosFragment extends Fragment {
             navController.navigate(R.id.action_resultadosFragment_to_posicionesFragment);
         });
 
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_resultados, container, false);
-
         return binding.getRoot();
     }
 }

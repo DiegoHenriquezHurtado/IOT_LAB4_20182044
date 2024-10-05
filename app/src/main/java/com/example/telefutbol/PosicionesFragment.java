@@ -20,9 +20,8 @@ public class PosicionesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         binding=FragmentPosicionesBinding.inflate(inflater,container,false);
-        //return inflater.inflate(R.layout.fragment_posiciones, container, false);
 
         NavController navController = NavHostFragment.findNavController(PosicionesFragment.this);
         binding.btnLigas.setOnClickListener(view -> {
