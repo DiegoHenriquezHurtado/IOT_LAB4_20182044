@@ -20,16 +20,22 @@
         android:layout_height="500dp"
         android:orientation="horizontal"
         android:gravity="center">
+        <ViewFlipper
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:flipInterval="2000"
+            android:autoStart="true"
+            android:clipToOutline="true">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/img_futbol_1" />
 
-        <ImageView
-            android:layout_width="186dp"
-            android:layout_height="169dp"
-            app:srcCompat="@drawable/img_futbol_1" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/img_futbol_2" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/img_futbol_2" />
+        </ViewFlipper>
     </LinearLayout>
     <Button
         android:id="@+id/btnIngresar"
@@ -40,6 +46,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
+        android:layout_gravity="center"
         android:text="Elaborado por:/Diego-Henriquez/20182044"/>
 </LinearLayout>
