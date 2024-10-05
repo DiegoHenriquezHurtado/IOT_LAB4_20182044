@@ -49,7 +49,7 @@ public class PosicionesFragment extends Fragment {
 
         //Creacion de la interfaz para consumir la api
         sportsDbService = new Retrofit.Builder()
-                .baseUrl("https://www.thesportsdb.com/")
+                .baseUrl("https://www.thesportsdb.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(SportsDbService.class);

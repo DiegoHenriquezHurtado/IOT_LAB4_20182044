@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="12dp"
+    android:background="@drawable/border_bottom"
+    android:backgroundTint="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre competencia: "/>
+            <TextView
+                android:id="@+id/nombreCompetencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nombre competencia"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ronda de busqueda: "/>
+            <TextView
+                android:id="@+id/nroRonda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nroRonda"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Equipo Local: "/>
+            <TextView
+                android:id="@+id/nombreEquipoLocal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nombre equipo local"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Equipo visitante: "/>
+            <TextView
+                android:id="@+id/nombreEquipoVisitante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nombre equipo visitante"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resultado: "/>
+            <TextView
+                android:id="@+id/resultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="**--**"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha de Encuentro: "/>
+            <TextView
+                android:id="@+id/fechaEncuentro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="**/**/**"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cantidad de Espectadores: "/>
+            <TextView
+                android:id="@+id/nroEspectadores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="***"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgBadge"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>
