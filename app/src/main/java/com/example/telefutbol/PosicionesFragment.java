@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.telefutbol.Entity.Posiciones;
 import com.example.telefutbol.Entity.Table;
@@ -38,15 +39,6 @@ public class PosicionesFragment extends Fragment {
 
         binding=FragmentPosicionesBinding.inflate(inflater,container,false);
 
-        /*NavController navController = NavHostFragment.findNavController(PosicionesFragment.this);
-        binding.btnLigas.setOnClickListener(view -> {
-            navController.navigate(R.id.action_posicionesFragment_to_ligasFragment);
-        });
-
-        binding.btnResultados.setOnClickListener(view -> {
-            navController.navigate(R.id.action_posicionesFragment_to_resultadosFragment);
-        });*/
-
         //Creacion de la interfaz para consumir la api
         sportsDbService = new Retrofit.Builder()
                 .baseUrl("https://www.thesportsdb.com")
@@ -55,32 +47,36 @@ public class PosicionesFragment extends Fragment {
                 .create(SportsDbService.class);
 
         binding.btnBuscar.setOnClickListener(view -> {
-            String idLiga = String.valueOf(binding.idLiga.getText());
-            String pais = String.valueOf(binding.temporada.getText());
-            sportsDbService.getPosiciones(idLiga,pais).enqueue(new Callback<Posiciones>() {
-                @Override
-                public void onResponse(Call<Posiciones> call, Response<Posiciones> response) {
-                    if(response.isSuccessful()){
-                        Posiciones posiciones = response.body();
-                        Table[] lista =  posiciones.getTable();
+            if(binding.idLiga.getText().toString().isEmpty() || binding.temporada.getText().toString().isEmpty()){
+                Toast.makeText(getContext(), "Debe llenar los campos de texto" , Toast.LENGTH_LONG).show();
+            }else{
+                String idLiga = String.valueOf(binding.idLiga.getText());
+                String pais = String.valueOf(binding.temporada.getText());
+                sportsDbService.getPosiciones(idLiga,pais).enqueue(new Callback<Posiciones>() {
+                    @Override
+                    public void onResponse(Call<Posiciones> call, Response<Posiciones> response) {
+                        if(response.isSuccessful()){
+                            Posiciones posiciones = response.body();
+                            Table[] lista =  posiciones.getTable();
 
-                        PosicionesAdapter adapter = new PosicionesAdapter();
-                        adapter.setContext(getContext());
-                        adapter.setListaPosiciones(Arrays.asList(lista));
+                            PosicionesAdapter adapter = new PosicionesAdapter();
+                            adapter.setContext(getContext());
+                            adapter.setListaPosiciones(Arrays.asList(lista));
 
-                        binding.rvPosiciones.setAdapter(adapter);
-                        binding.rvPosiciones.setLayoutManager(new LinearLayoutManager(getContext()));
+                            binding.rvPosiciones.setAdapter(adapter);
+                            binding.rvPosiciones.setLayoutManager(new LinearLayoutManager(getContext()));
 
-                    }else {
-                        Log.d("msg-test","error en la respuesta del webservice");
+                        }else {
+                            Log.d("msg-test","error en la respuesta del webservice");
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(Call<Posiciones> call, Throwable t) {
-                    t.printStackTrace();
-                }
-            });
+                    @Override
+                    public void onFailure(Call<Posiciones> call, Throwable t) {
+                        t.printStackTrace();
+                    }
+                });
+            }
         });
 
         return binding.getRoot();
