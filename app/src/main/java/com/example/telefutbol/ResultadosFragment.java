@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.telefutbol.Entity.Events;
 import com.example.telefutbol.Entity.Resultados;
@@ -37,15 +38,6 @@ public class ResultadosFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         binding = FragmentResultadosBinding.inflate(inflater,container,false);
-        /*NavController navController = NavHostFragment.findNavController(ResultadosFragment.this);
-
-        binding.btnLigas.setOnClickListener(view -> {
-            navController.navigate(R.id.action_resultadosFragment_to_ligasFragment);
-        });
-
-        binding.btnPosiciones.setOnClickListener(view -> {
-            navController.navigate(R.id.action_resultadosFragment_to_posicionesFragment);
-        });*/
 
         //Creacion de la interfaz para consumir la api
         sportsDbService = new Retrofit.Builder()
@@ -54,32 +46,37 @@ public class ResultadosFragment extends Fragment {
                 .build()
                 .create(SportsDbService.class);
         binding.btnBuscar.setOnClickListener(view -> {
-            String idLiga = String.valueOf(binding.idLiga.getText());
-            String ronda = String.valueOf(binding.ronda.getText());
-            String temporada = String.valueOf(binding.temporada.getText());
-            sportsDbService.getResultados(idLiga,ronda,temporada).enqueue(new Callback<Resultados>() {
-                @Override
-                public void onResponse(Call<Resultados> call, Response<Resultados> response) {
-                    if(response.isSuccessful()){
-                        Resultados resultados = response.body();
-                        Events[] lista = resultados.getEvents();
+            if(binding.idLiga.getText().toString().isEmpty() || binding.temporada.getText().toString().isEmpty() || binding.ronda.getText().toString().isEmpty()) {
+                Toast.makeText(getContext(), "Debe llenar los campos de texto", Toast.LENGTH_LONG).show();
+            }else{
+                String idLiga = String.valueOf(binding.idLiga.getText());
+                String ronda = String.valueOf(binding.ronda.getText());
+                String temporada = String.valueOf(binding.temporada.getText());
+                sportsDbService.getResultados(idLiga,ronda,temporada).enqueue(new Callback<Resultados>() {
+                    @Override
+                    public void onResponse(Call<Resultados> call, Response<Resultados> response) {
+                        if(response.isSuccessful()){
+                            Resultados resultados = response.body();
+                            Events[] lista = resultados.getEvents();
 
-                        ResultadosAdapter adapter = new ResultadosAdapter();
-                        adapter.setContext(getContext());
-                        adapter.setListEventos(Arrays.asList(lista));
+                            ResultadosAdapter adapter = new ResultadosAdapter();
+                            adapter.setContext(getContext());
+                            adapter.setListEventos(Arrays.asList(lista));
 
-                        binding.rvResultados.setAdapter(adapter);
-                        binding.rvResultados.setLayoutManager(new LinearLayoutManager(getContext()));
-                    }else{
-                        Log.d("msg-test","error en la respuesta del webservice");
+                            binding.rvResultados.setAdapter(adapter);
+                            binding.rvResultados.setLayoutManager(new LinearLayoutManager(getContext()));
+                        }else{
+                            Log.d("msg-test","error en la respuesta del webservice");
+                        }
                     }
-                }
 
-                @Override
-                public void onFailure(Call<Resultados> call, Throwable t) {
-                    t.printStackTrace();
-                }
-            });
+                    @Override
+                    public void onFailure(Call<Resultados> call, Throwable t) {
+                        t.printStackTrace();
+                    }
+                });
+            }
+
         });
 
         return binding.getRoot();
